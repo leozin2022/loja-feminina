@@ -1,0 +1,7 @@
+{
+  "name": "Boutique Minimalista - Glamour & Estilo",
+  "description": "Uma vitrine de moda feminina sofisticada com gestão administrativa completa, filtros avançados e integração com WhatsApp e Instagram.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
