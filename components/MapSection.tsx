@@ -6,7 +6,8 @@ const MapSection: React.FC = () => {
   const encodedAddress = encodeURIComponent(STORE_ADDRESS);
   const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
   
-  // Utilizando o formato de embed público do Google Maps que não exige chave de API restrita para exibição básica
+  // Usando a URL de embed padrão do Google que funciona sem chaves de API restritas
+  // Isso evita o erro de 'process is not defined' no console
   const embedUrl = `https://maps.google.com/maps?q=${encodedAddress}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
 
   return (
@@ -48,14 +49,13 @@ const MapSection: React.FC = () => {
             <iframe
               width="100%"
               height="100%"
-              style={{ border: 0, filter: 'contrast(1.1) brightness(1.05)' }}
+              style={{ border: 0 }}
               loading="lazy"
               allowFullScreen
               referrerPolicy="no-referrer-when-downgrade"
               src={embedUrl}
               title="Localização da Loja Boutique Glamour"
             ></iframe>
-            {/* Overlay sutil para combinar com a estética da loja */}
             <div className="absolute inset-0 pointer-events-none border-l border-pink-100/50"></div>
           </div>
         </div>
